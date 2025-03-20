@@ -11,6 +11,9 @@ import Footer from '../components/Footer';
 const Index = () => {
   // Set up meta tags for SEO
   useEffect(() => {
+    // Force dark mode by adding class to document
+    document.documentElement.classList.add('dark');
+    
     document.title = "Sphinx Service | Betrouwbare Beveiliging & Personeelsdiensten | Nederland";
     
     // Set meta description
@@ -22,6 +25,12 @@ const Index = () => {
       meta.name = 'description';
       meta.content = "Professionele beveiliging voor bedrijven, evenementen en particulieren. 24/7 toezicht, gecertificeerde professionals en snelle respons. Vraag nu advies aan!";
       document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+    
+    // Set theme color for browser UI
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute("content", "#121212");
     }
     
     // Initialize fade-in animations on scroll
@@ -47,7 +56,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-sphinx-black dark:bg-sphinx-black text-sphinx-lightGray">
       <Navbar />
       <HeroSection />
       <ServicesSection />
