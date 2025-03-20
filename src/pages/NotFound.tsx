@@ -1,5 +1,9 @@
+
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { ArrowLeft } from "lucide-react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,14 +16,30 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex flex-col bg-white">
+      <Navbar />
+      
+      <div className="flex-grow flex items-center justify-center py-24">
+        <div className="text-center px-4 max-w-lg mx-auto">
+          <span className="inline-block bg-sphinx-orange/10 text-sphinx-orange px-4 py-1 rounded-full text-sm font-medium mb-4">
+            404 Error
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-sphinx-black">Pagina niet gevonden</h1>
+          <p className="text-xl text-sphinx-darkGray mb-8">
+            De pagina die u probeert te bezoeken bestaat niet of is verplaatst.
+          </p>
+          
+          <a 
+            href="/" 
+            className="btn-primary inline-flex items-center justify-center"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Terug naar home
+          </a>
+        </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
