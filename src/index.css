@@ -35,7 +35,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -45,36 +45,6 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
   }
 
   * {
@@ -87,17 +57,17 @@
   }
 
   body {
-    @apply bg-sphinx-black text-sphinx-lightGray dark:bg-sphinx-black dark:text-sphinx-lightGray transition-colors duration-300;
+    @apply bg-white text-sphinx-black;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/90 backdrop-blur-md shadow-lg border border-white/20 rounded-xl transition-all duration-300 dark:bg-sphinx-darkGray/90 dark:border-sphinx-darkGray/50 dark:shadow-dark-lg;
+    @apply bg-white/90 backdrop-blur-md shadow-lg border border-white/20 rounded-xl transition-all duration-300;
   }
   
   .service-card {
-    @apply glass-card p-6 hover:shadow-xl hover:shadow-sphinx-orange/10 transition-all duration-300 dark:hover:shadow-sphinx-orange/20;
+    @apply glass-card p-6 hover:shadow-xl hover:shadow-sphinx-orange/10 transition-all duration-300;
   }
   
   .btn-primary {
@@ -105,7 +75,7 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-4 relative text-sphinx-black dark:text-sphinx-white;
+    @apply text-3xl md:text-4xl font-bold mb-4 relative;
   }
   
   .section-title::after {
@@ -141,14 +111,6 @@
   .border-glow {
     box-shadow: 0 0 15px rgba(242, 99, 35, 0.3);
   }
-
-  .dark-card {
-    @apply bg-sphinx-darkGray rounded-xl p-6 border border-sphinx-gray/20 shadow-dark-md hover:shadow-dark-lg transition-all duration-300;
-  }
-
-  .dark-input {
-    @apply bg-sphinx-darkGray border border-sphinx-gray/30 text-sphinx-lightGray rounded-md focus:border-sphinx-orange focus:ring-1 focus:ring-sphinx-orange/50 transition-all duration-300;
-  }
 }
 
 /* Custom scrollbar */
@@ -157,19 +119,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3a3a3a;
+  background: #888;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #f26323;
-}
-
-/* Dark mode transition */
-.dark-transition {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
