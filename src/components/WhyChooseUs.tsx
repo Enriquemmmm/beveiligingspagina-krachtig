@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="fade-in-section">
+          <div className="fade-in-section text-center lg:text-left">
             <span className="inline-block bg-sphinx-orange/20 text-sphinx-orange px-4 py-1 rounded-full text-sm font-medium mb-4">
               Waarom Kiezen voor Sphinx?
             </span>
